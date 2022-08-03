@@ -11,6 +11,6 @@ router.get('/graphs', webController.graphs);
 router.get('/rank', webController.graphs);
 router.get('/aqi', webController.graphs);
 router.get('/signup', webController.signup);
-router.get('/about', webController.signup);
+router.get('/about', webController.about);
 
 module.exports = router;
