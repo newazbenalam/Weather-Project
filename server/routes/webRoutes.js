@@ -7,6 +7,9 @@ const webController = require('../controllers/webController');
  */
 router.get('/', webController.home);
 router.get('/home', webController.index);
+router.get('/aqi', webController.aqi);
 router.get('/graphs', webController.graphs);
+router.get('/map', webController.map);
+router.get('/rank', webController.rank);
 
 module.exports = router;

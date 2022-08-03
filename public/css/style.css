@@ -45,11 +45,48 @@ main {
   /* align-items: center; */
   justify-content: center;
   flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 768px) {
   main {
     margin-top: 4rem;
+  }
+  .bx-cloud-lightning::before {
+    content: 'Home';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-bar-chart-square::before {
+    content: 'Graph';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-data::before {
+    content: 'AQI';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-calendar::before {
+    content: 'Map';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-map::before {
+    content: 'Map';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-sort-up::before {
+    content: 'Rank';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .alter1 {
+    content: '';
+    visibility: hidden;
+    font-size: 1.5rem;
+    align-items: content;
   }
 }
 
@@ -100,8 +137,11 @@ main {
 main-left div, main-right div{
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgba(36, 37, 38, var(--tw-bg-opacity)); */
+  /* background: white; */
   cursor: pointer;
+  height: auto;
+  text-align: center;
 }
 
 main-left div:hover, main-right div:hover{
@@ -119,6 +159,7 @@ main > main-center {
 main > main-left, main > main-right {
   flex: 0px 0px 0px;
   width: 0;
+  visibility: hidden;
 }
 
 main > main-left {
@@ -132,6 +173,7 @@ main > main-left {
   main > main-left,
   main > main-right {
     flex: 0 0 20vw;
+    visibility: visible;
   }
 }
 
