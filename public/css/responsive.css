@@ -1,0 +1,134 @@
+/* RESPONSIVE CSS */
+
+@media only screen and (max-width: 450px){
+	.navbarlist{
+		display: none;
+	}
+
+	nav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.headingbox{
+		margin-left: 0;
+		font-size: 15px;
+	}
+
+	.smallnavlogo{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.smallnavlogo li a{
+		color: white;
+		padding: 10px 20px;
+		font-size: 20px;
+	}
+
+	.headingbox{
+		margin-left: 10px;
+		font-size: 15px;
+	}
+
+	.menubar{
+		margin-left: auto;
+		margin-right: 25px;
+		font-size: 20px;
+	}
+
+
+	footer{
+		font-size: 15px;
+	}
+
+	
+	.dropdown_content{
+		left: 0;
+		right: 0;
+	}
+	
+    
+
+	/* AUTO RESPONSIVE */
+
+    .section{
+        margin: auto;
+        padding: auto;
+        height: auto;
+        width: auto;
+    }
+
+    .section .content{
+        margin: auto;
+        padding: auto;
+        font-size: auto;
+        height: auto;
+        width: auto;
+    }
+
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 1280px){
+	.navbarlist{
+		display: none;
+	}
+
+	nav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	.headingbox{
+		margin-left: 0;
+		font-size: 20px;
+	}
+
+	.smallnavlogo{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.smallnavlogo li a{
+		color: white;
+		padding: 10px 35px;
+		font-size: 20px;
+	}
+
+	footer{
+		font-size: 20px;
+	}
+
+	.dropdown_content{
+		width: 80%;
+		margin: auto auto;
+		left: 0;
+		right: 0;
+	}
+	
+    /* AUTO RESPONSIVE */
+
+    .section{
+        margin: auto;
+        padding: auto;
+        height: auto;
+        width: auto;
+    }
+
+    .section .content{
+        margin: auto;
+        padding: auto;
+        font-size: auto;
+        height: auto;
+        width: auto;
+    }
+
+
+}
