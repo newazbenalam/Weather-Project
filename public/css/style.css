@@ -175,7 +175,6 @@ main > main-left {
   main > main-right {
     flex: 0 0 20vw;
     visibility: visible;
-    display: initial;
   }
 }
 
