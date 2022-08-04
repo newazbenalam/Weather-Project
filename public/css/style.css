@@ -160,6 +160,7 @@ main > main-left, main > main-right {
   width: 0;
   visibility: hidden;
   display: none;
+
 }
 
 main > main-left {
