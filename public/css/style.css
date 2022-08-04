@@ -159,10 +159,8 @@ main > main-center {
 main > main-left, main > main-right {
   width: 0;
   visibility: hidden;
-<<<<<<< HEAD
   display: none;
-=======
->>>>>>> 18fad83cdf76eda2b112db9696030b8597f1912c
+
 }
 
 main > main-left {
@@ -177,10 +175,7 @@ main > main-left {
   main > main-right {
     flex: 0 0 20vw;
     visibility: visible;
-<<<<<<< HEAD
     display: initial;
-=======
->>>>>>> 18fad83cdf76eda2b112db9696030b8597f1912c
   }
 }
 
