@@ -1,3 +1,6 @@
+
+class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block text-yellow-500 border-b-4 border-yellow-500">
+
 <style>
         * {
             margin: 0;
