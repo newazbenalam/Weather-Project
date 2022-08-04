@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Weather Analytics</title>
 </head>
 
 <body class="bg-gray-100 dark:bg-dark-main">
   <%- include('../components/navbar.ejs') -%>
     <main class="dark:text-dark-txt flex">
-      <main-left>
+      <main-left class="mx-2">
         <%- include('../components/sideCard.ejs') -%>
       </main-left>
 
@@ -28,7 +28,7 @@
         <%- body -%>
       </main-center>
 
-      <main-right>
+      <main-right class="mx-2">
         <%- include('../components/sideCard_right.ejs') -%>
       </main-right>
     </main>

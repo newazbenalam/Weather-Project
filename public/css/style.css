@@ -134,7 +134,7 @@ main {
 }
 
 
-main-left div, main-right div{
+.sideCard{
   margin-top: 5px;
   margin-bottom: 5px;
   /* background-color: rgba(36, 37, 38, var(--tw-bg-opacity)); */
@@ -160,6 +160,7 @@ main > main-left, main > main-right {
   flex: 0px 0px 0px;
   width: 0;
   visibility: hidden;
+  display: none;
 }
 
 main > main-left {
@@ -174,6 +175,7 @@ main > main-left {
   main > main-right {
     flex: 0 0 20vw;
     visibility: visible;
+    display: initial;
   }
 }
 
