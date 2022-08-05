@@ -19,14 +19,13 @@
 	.smallnavlogo{
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		padding: 0;
+		justify-content: space-between;
+		padding: 0 20px;
 	}
 
 	.smallnavlogo li a{
 		color: white;
-		padding: 10px 20px;
-		font-size: 20px;
+		font-size: 15px;
 	}
 
 	.headingbox{
@@ -93,12 +92,12 @@
 	.smallnavlogo{
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		padding: 0 80px;
 	}
 	
 	.smallnavlogo li a{
 		color: white;
-		padding: 10px 35px;
 		font-size: 20px;
 	}
 

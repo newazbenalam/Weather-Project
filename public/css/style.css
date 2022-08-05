@@ -30,23 +30,7 @@ main-center{
   animation-duration: 0.2s;
 }
 
-.stacked-buttons{
-  width: 90%;
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  margin: 5px 2px;
-  transition: 0.4s;
-  font-weight: bold;
-  font-size: large;
-}
 
-.stacked-buttons:hover{
-  background-color: cadetblue;
-  transform: scale(1.05);
-}
 
 @media only screen and (max-width: 768px){
     main-left, main-right{

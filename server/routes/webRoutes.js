@@ -9,7 +9,7 @@ router.get('/', webController.home);
 router.get('/home', webController.index);
 router.get('/graphs', webController.graphs);
 router.get('/rank', webController.graphs);
-router.get('/aqi', webController.graphs);
+router.get('/aqi', webController.aqi);
 router.get('/signup', webController.signup);
 router.get('/about', webController.about);
 

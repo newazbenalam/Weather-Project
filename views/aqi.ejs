@@ -1,0 +1,68 @@
+<div class="aqi-card">
+    <div class="container-fluid p-3">
+        <div class="w-100 rounded-3 mx-auto p-3 bg-dark text-light">            
+            <div class="aqi-heading">
+                <h1>Air Quality in Dhaka</h1>
+                <p>Air Quality index AQI and PM 2.5 air pollution in Dhaka</p>
+            </div>   
+        
+            <div id="aqiColorID" class="aqiColorID p-3 mb-2 rounded-3 overflow-hidden" style="background-color: crimson;">
+                <div class="d-flex flex-row mb-3 justify-content-between">
+                    <div class="border border-2 border-dark px-4 py-2 rounded-3">
+                        <h4>US AQI 165</h4>
+                    </div>
+                    <div class="mx-3 img-thumbnail">
+                        <img style="height: 50px; width: 50px;" src="https://w7.pngwing.com/pngs/183/642/png-transparent-computer-icons-customer-service-livechat-technical-support-maroon-colour-icon-miscellaneous-face-smiley.png">
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h2>Unhealthy</h2>
+                </div>
+            </div>
+                
+            <div class="mx-1">
+                <p>Overview</p>
+                <h2>What is the current air quality in Dhaka?</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-light table-striped table-bordered border-dark rounded-3">
+                    <thead>
+                        <tr scope="row">
+                            <th scope="col"><p>Air Quality Level</p></th>
+                            <th scope="col"><p>Air Quality Index</p></th>
+                            <th scope="col"><p>Main pollutant</p></th>
+                        </tr>
+                    </thead>
+                    
+                    <tr scope="row">
+                        <td scope="col"><p>Unhealthy</p></td>
+                        <td scope="col"><p>165 US AQI <span>Color</span></p></td>
+                        <td scope="col"><p>PM 2.5</p></td>
+                    </tr>
+                </table>
+            </div>                             
+        </div>    
+    </div>
+</div>
+
+
+<div class="w-100 d-flex justify-content-center items-center gap-3">
+    <button type="button" class="mybutton btn btn-dark">Green</button>
+    <button type="button" class="mybutton btn btn-dark">Orange</button>
+    <button type="button" class="mybutton btn btn-dark">Crimson</button>
+    <button type="button" class="mybutton btn btn-dark">Pink</button>
+    <button type="button" class="mybutton btn btn-dark">Black</button>
+    <button type="button" class="mybutton btn btn-dark">CadetBlue</button>
+    <button type="button" class="mybutton btn btn-dark">Grey</button>
+</div>
+
+<script>
+    let btn = document.getElementsByClassName("mybutton");
+    for(let i in btn){
+        btn[i].addEventListener("click", ()=>{
+            let take = document.getElementById("aqiColorID")
+            console.log(btn[i].innerText.toLowerCase())
+            take.style.backgroundColor = btn[i].innerText.toLowerCase()
+        })
+    }
+</script>
