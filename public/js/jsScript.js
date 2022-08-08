@@ -53,35 +53,47 @@ function loader() {
     document.documentElement.classList.toggle("dark");
 };*/
 
-var trace1 = {
-  type: "bar",
-  x: [1, 2, 3, 4],
-  y: [11, 10, 5, 8],
-  marker: {
-    color: "#C8A2C8",
-    line: {
-      width: 2.5,
-    },
-  },
-};
-
-function bar() {
-  const Http = new XMLHttpRequest();
-  const url = "/bar";
-  Http.open("GET", url);
-  Http.send();
-
-  Http.onreadystatechange = (e) => {
-    console.log(Http.responseText);
-  };
+function plotgraph (x, y){
+    var trace1 = {
+        type: "bar",
+        x: x,
+        y: y,
+        marker: {
+          color: "#C8A2C8",
+          line: {
+            width: 2.5,
+          },
+        },
+      };
+      
+      var graphDiv = document.getElementById('bar1')
+      
+      Plotly.newPlot(
+        graphDiv,
+        [trace1],
+        {
+          title: "Nice Bar Graph",
+          font: { size: 18 },
+        },
+        { responsive: true}
+      );
 }
 
-Plotly.newPlot(
-  "bar1",
-  [trace1],
-  {
-    title: "Nice Bar Graph",
-    font: { size: 18 },
-  },
-  { responsive: true, theme: "dark" }
-);
+plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17] );
+
+function bar() {
+    var arrx=[], arry=[], arr = [arrx,arry];
+    const Http = new XMLHttpRequest();
+    const url = "/bar";
+    Http.open("GET", url);
+    Http.send();
+  
+    Http.onreadystatechange = (e) => {
+      arr = JSON.parse(Http.response);
+
+    //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
+    //   console.log(arr[0]);
+        plotgraph(arr[0], arr[1]);
+
+    };
+  }
