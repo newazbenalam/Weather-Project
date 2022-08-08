@@ -7,6 +7,7 @@ const fullpath = __dirname + '/public';
 const routes = require('./server/routes/webRoutes');
 
 require('dotenv').config();
+require('./server/controllers/mysql');
 
 app.use(express.static(fullpath));
 app.use(expressLayouts);

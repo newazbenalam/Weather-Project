@@ -12,4 +12,6 @@ router.get('/graphs', webController.graphs);
 router.get('/map', webController.map);
 router.get('/rank', webController.rank);
 
+router.get('/bar', webController.bar);
+
 module.exports = router;

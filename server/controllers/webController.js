@@ -2,6 +2,8 @@
  * GET /
  * Homepage
  */
+
+
 exports.index = async(req, res) => {
   res.render('index');
 }
@@ -24,4 +26,10 @@ exports.map = async(req, res) => {
 
 exports.rank = async(req, res) => {
   res.render('rank');
+}
+
+exports.bar = async(req, res) => {
+  var a = require('../models/newaz');
+  console.log(a)
+  res.return(a)
 }
