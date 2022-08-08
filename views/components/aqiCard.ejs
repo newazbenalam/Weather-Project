@@ -1,59 +1,121 @@
 <style>
+    .aqi-card{
+        width: 100%;
+        margin: 0 auto;            
+        border-radius: 20px;
+        background-color: rgb(29, 29, 29);
+        color: white;
+    }
 
+    .aqi-card .aqi-flexbox{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;        
+        padding: 1rem 0;
+        padding-left: 1rem;
+    }
+
+    .aqi-card .aqi-index{
+        border: 2px solid rgb(58, 58, 58);
+        border-radius: 20px;
+        margin-top: 1rem;
+        padding: 0.5rem 2rem;
+    }
+
+    .aqi-card table{
+        width: 80%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .aqi-card table, th, td{
+        border: 2px solid rgb(151, 151, 151);
+        border-collapse: collapse;
+    }
+
+    @media (max-width: 500px){
+        .aqi-card .aqi-flexbox{
+            padding: 0.3rem 0;
+            padding-left: 0.5rem;
+        }
+    }
+    
 </style>
-<div class="aqi-card card-wrapper">
-  <div class="container-fluid">
-      <div class="w-full h-auto rounded-md bg-light-b">
-          <div class="row">
-              <div class="aqi-heading">
-                  <h1>Air Quality in Dhaka</h1>
-                  <p>Air Quality index AQI and PM 2.5 air pollution in Dhaka</p>
-              </div>
-          </div>
 
-          <div class="row">
-              <div id="aqiColor" class="p-3 mb-2" style="background-color: red;">
-                  <div class="d-flex flex-row mb-3 justify-content-between">
-                      <div class="border border-dark px-4 py-2 rounded-3">
-                          <h4>US AQI 165</h4>
-                      </div>
-                      <div class="align-self-end">
-                          <img style="height: 50px; width: 50px;" src="https://w7.pngwing.com/pngs/183/642/png-transparent-computer-icons-customer-service-livechat-technical-support-maroon-colour-icon-miscellaneous-face-smiley.png">
-                      </div>
-                  </div>
-                  <div class="mt-2">
-                      <h2>Unhealthy</h2>
-                  </div>
-              </div>
-          </div>
+<div class="aqi-card">
+    <div class="aqi-flexbox">
+        <h1>Air Quality in Dhaka</h1>
+        <p>Air Quality index AQI and PM 2.5 air pollution in Dhaka</p>
+    </div>   
+
+    <div class="aqiColor aqi-flexbox" style="background-color: crimson;">
+        <div class="aqi-index">
+            <h4>US AQI <span class="aqiIndex"></span></h4>                
+        </div>
+        <div class="mt-4 ml-2">
+            <h1 class="aqiLevel">Unhealthy</h1>
+        </div>
+    </div>
+        
+    <div class="aqi-flexbox">
+        <h3>Overview</h3>
+        <h2>What is the current air quality in Dhaka?</h2>
+    </div>
+    <div class="aqi-flexbox">
+        <table>
+            <thead>
+                <tr scope="row" class="px-2">
+                    <th><p>Air Quality Level</p></th>
+                    <th><p>Air Quality Index</p></th>
+                    <th><p>Main pollutant</p></th>
+                </tr>
+            </thead>
+            
+            <tr scope="row" class="px-2">
+                <td><p class="aqiLevel">Unhealthy</p></td>
+                <td><p class="aqiIndex">165 US AQI</p></td>
+                <td><p class="aqiMainPollutant">PM 2.5</p></td>
+            </tr>
+        </table>
+    </div> 
+       
+</div>
 
 
-          <div class="row">
-              <div class="aqi-body2">
-                  <div class="aqi-overview">
-                      <p>Overview</p>
-                      <h2>What is the current air quality in Dhaka?</h2>
-                  </div>
-                  <div class="aqi-table">
-                      <table class="table table-dark table-striped table-bordered border-dark">
-                          <thead>
-                              <tr scope="row">
-                                  <th scope="col"><p>Air Quality Level</p></th>
-                                  <th scope="col"><p>Air Quality Index</p></th>
-                                  <th scope="col"><p>Main pollutant</p></th>
-                              </tr>
-                          </thead>
-                          
-                          <tbody><tr scope="row">
-                              <td scope="col"><p>Unhealthy</p></td>
-                              <td scope="col"><p>165 US AQI <span>Color</span></p></td>
-                              <td scope="col"><p>PM 2.5</p></td>
-                          </tr>
-                      </tbody></table>
-                  </div>
-              </div>
-          </div>
-          
-      </div>    
-  </div>
+<!-- PORE DELETE KORIS EI NEWAZ DIV -->
+<div class="Newaz"> 
+    <!-- NEW DIV BLOCK -->
+    <div style="width: 80%; margin: 1rem auto; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap">
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Green</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Orange</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Blue</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Crimson</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">CadetBlue</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Olive</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Pink</button>
+        <button type="button" class="mybutton" style="background-color: black; color: white; padding: .5rem 2rem; border-radius: 10px; cursor: pointer;">Purple</button>
+    </div>
+
+    
+
+    <script>
+        $(".mybutton").click(function(){
+            $(".aqiColor").css("background-color", `${this.innerText.toLowerCase()}`)
+            $(".aqiLevel").html(`${this.innerText.toLowerCase()}`)
+            $(".aqiIndex").html(`${parseInt(Math.floor(Math.random()*10000))}`)
+            $(".aqiMainPollutant").html("Newaz "+`${parseFloat(Math.floor(Math.random()*10000000))}`)
+        });
+
+        /*btn = document.getElementsByClassName("mybutton")
+        for(let i in btn){
+            btn[i].addEventListener("click", ()=>{
+                let take = document.getElementById("aqiColorID")
+                console.log(btn[i].innerText.toLowerCase())
+                take.style.backgroundColor = btn[i].innerText.toLowerCase()
+            })
+        }*/
+        
+    </script>
+
 </div>
