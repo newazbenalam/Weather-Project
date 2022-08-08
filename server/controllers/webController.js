@@ -29,7 +29,6 @@ exports.rank = async(req, res) => {
 }
 
 exports.bar = async(req, res) => {
-  var a = require('../models/newaz');
-  console.log(a)
-  res.return(a)
+  // var a = async ()=> require('../models/newaz');
+  res.send(require('../models/newaz').bar)
 }

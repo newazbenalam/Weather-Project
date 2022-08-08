@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const webController = require('../controllers/webController');
+const graph = require('../models/graph')
 
 /**
  * App Routes here
@@ -12,6 +13,6 @@ router.get('/graphs', webController.graphs);
 router.get('/map', webController.map);
 router.get('/rank', webController.rank);
 
-router.get('/bar', webController.bar);
+router.get('/bar', graph.bar);
 
 module.exports = router;
