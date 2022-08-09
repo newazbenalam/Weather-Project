@@ -28,6 +28,12 @@ exports.rank = async(req, res) => {
   res.render('rank');
 }
 
+exports.signin = async(req, res) => {
+  userType = ["Ministry", "EPA", "PurpleAir"]
+  let cities = ["Dhaka", "Chittagong", "Khulna", "Sylhet", "Rajshahi", "Mymensingh", "Barisal", "Rangpur", "Comilla", "Narayanganj", "Gazipur"]
+  res.render('signin', {cities, userType});
+}
+
 exports.bar = async(req, res) => {
   // var a = async ()=> require('../models/newaz');
   res.send(require('../models/newaz').bar)

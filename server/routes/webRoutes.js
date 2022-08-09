@@ -12,6 +12,8 @@ router.get('/aqi', webController.aqi);
 router.get('/graphs', webController.graphs);
 router.get('/map', webController.map);
 router.get('/rank', webController.rank);
+router.get('/signin', webController.signin);
+
 
 router.get('/bar', graph.bar);
 
