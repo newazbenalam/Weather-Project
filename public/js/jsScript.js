@@ -52,10 +52,10 @@ function loader() {
 /*document.querySelector("#dark-mode-toggle-mb").onclick = () => {
     document.documentElement.classList.toggle("dark");
 };*/
-
-function plotgraph (x, y){
+var graphDiv = document.getElementById('bar1')
+function plotgraph (x, y, type){
     var trace1 = {
-        type: "bar",
+        type: type,
         x: x,
         y: y,
         marker: {
@@ -66,7 +66,6 @@ function plotgraph (x, y){
         },
       };
       
-      var graphDiv = document.getElementById('bar1')
       
       Plotly.newPlot(
         graphDiv,
@@ -79,7 +78,7 @@ function plotgraph (x, y){
       );
 }
 
-plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17] );
+plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17], "bar" );
 
 function bar() {
     var arrx=[], arry=[], arr = [arrx,arry];
@@ -93,7 +92,47 @@ function bar() {
 
     //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
     //   console.log(arr[0]);
-        plotgraph(arr[0], arr[1]);
+        plotgraph(arr[0], arr[1], "bar");
 
     };
   }
+
+  function scatter() {
+    var arrx=[], arry=[], arr = [arrx,arry];
+    const Http = new XMLHttpRequest();
+    const url = "/scatter";
+    Http.open("GET", url);
+    Http.send();
+  
+    Http.onreadystatechange = (e) => {
+      arr = JSON.parse(Http.response);
+
+    //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
+    //   console.log(arr[0]);
+    
+    var trace1 = {
+      x: arr[0],
+      y: arr[1],
+      mode: 'markers',
+      type: 'scatter',
+      name: 'Scatter',
+      marker: { size: 5 }
+    };
+    
+    var data = [trace1];
+    
+    var layout = {
+      // xaxis: {
+      //   range: [ 0.75, 5.25 ]
+      // },
+      // yaxis: {
+      //   range: [0, 8]
+      // },
+      title:'Scatter Plot Year'
+    };
+
+    Plotly.newPlot(graphDiv, data, layout);
+
+    };
+  }
+

@@ -18,3 +18,19 @@ exports.bar = async(req, res) => {
     res.send(arr2D);
   });
 }
+
+exports.scatter = async(req, res) => {
+  // sql = `SELECT mean, Daily FROM ${tbname} WHERE Daily like "%/2020";`
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    
+
+    for (let i = 0; i < results.length; i++) {
+      arrX[i] = Object.values(results[i])[0]; 
+      arrY[i] = Object.values(results[i])[1]; 
+    }
+    arr2D = [arrY, arrX];
+    // arr = Object.values(results[0])
+    res.send(arr2D);
+  });
+}

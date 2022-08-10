@@ -16,5 +16,6 @@ router.get('/signin', webController.signin);
 
 
 router.get('/bar', graph.bar);
+router.get('/scatter', graph.scatter);
 
 module.exports = router;
