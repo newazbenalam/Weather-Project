@@ -4,6 +4,7 @@
  */
 
 
+
 exports.index = async(req, res) => {
   res.render('index');
 }
@@ -34,7 +35,3 @@ exports.signin = async(req, res) => {
   res.render('signin', {cities, userType});
 }
 
-// exports.bar = async(req, res) => {
-//   // var a = async ()=> require('../models/newaz');
-//   res.send(require('../models/newaz').bar)
-// }
