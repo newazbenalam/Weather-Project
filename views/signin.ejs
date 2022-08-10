@@ -126,6 +126,43 @@
     }
 
     /* <><><><><><><><><><><> */
+    .callout {
+        position: fixed;
+        bottom: 35px;
+        right: 20px;
+        margin-left: 20px;
+        max-width: 300px;
+        cursor: pointer;
+      }
+      
+      .callout-header {
+        text-align: center;
+        padding: 25px 15px;
+        background: #555;
+        font-size: 30px;
+        color: white;
+      }
+      
+      .callout-container {
+        padding: 15px;
+        background-color: #ccc;
+        color: black
+      }
+      
+      .closebtn {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      
+      .closebtn:hover {
+        color: lightgrey;
+      }
+
+
 
     @media only screen and (max-width: 500px){
 
@@ -179,18 +216,18 @@
 
         <div class="loginform pt-4">
             <h1 class="font-bold text-3xl">Login</h1>
-            <form class="form-flex-container" method="post" action="">
+            <form class="form-flex-container" method="post" action="userpage">
                 <div class="flex-fullspan">
                     <div class="flex-view-block">
                         <label class="myform-label">Email</label>
-                        <input type="email" class="myform-input" name="loginemail">
+                        <input type="email" class="myform-input" name="loginemail" required>
                     </div>
                 </div>
 
                 <div class="flex-fullspan">
                     <div class="flex-view-block">
                         <label class="myform-label">Password</label>
-                        <input type="password" class="myform-input" name="loginpassword">
+                        <input type="password" class="myform-input" name="loginpassword" required>
                     </div>
                 </div>
 
@@ -209,13 +246,13 @@
         <div class="formbox">
 
             <h1 class="font-bold text-3xl">Sign Up</h1>
-            <form class="form-flex-container" method="post" action="">
+            <form class="form-flex-container" method="post" action="signin">
 
                 <!--  -->
                 <div class="flex-fullspan">
                     <div class="flex-view-block">
                         <label class="myform-label">User Type</label>
-                        <select class="myform-input" name="usertype">
+                        <select class="myform-input" name="usertype" required>
                             <% for(let i in locals.userType){ %>
                                 <option>
                                     <%= userType[i] %>
@@ -229,13 +266,13 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">First Name</label>
-                        <input type="text" class="myform-input" name="fname">
+                        <input type="text" class="myform-input" name="fname" required>
                     </div>
                 </div>
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Last Name</label>
-                        <input type="text" class="myform-input" name="lname">
+                        <input type="text" class="myform-input" name="lname" required>
                     </div>
                 </div>
 
@@ -244,13 +281,13 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Email</label>
-                        <input type="email" class="myform-input" name="email">
+                        <input type="email" class="myform-input" name="email" required>
                     </div>
                 </div>
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Contact Number</label>
-                        <input type="text" class="myform-input" name="contactNo">
+                        <input type="text" class="myform-input" name="contactNo" required>
                     </div>
                 </div>
 
@@ -259,7 +296,7 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Date Of Birth</label>
-                        <input type="date" class="myform-input" name="dob">
+                        <input type="date" class="myform-input" name="dob" required>
                     </div>
                 </div>
 
@@ -267,10 +304,10 @@
                     <div class="flex-view-block">
                         <label class="myform-label">Gender</label>
                         <div class="flex-view-inline">
-                            <input class="myform-input" type="radio" name="gender" value="male"><span
+                            <input class="myform-input" type="radio" name="gender" value="male" required><span
                                 style="margin-right: .1rem;"></span>
                             <label class="myform-label">Male</label><span style="margin-right: 1rem;"></span>
-                            <input class="myform-input" type="radio" name="gender" value="female"><span
+                            <input class="myform-input" type="radio" name="gender" value="female" required><span
                                 style="margin-right: .1rem;"></span>
                             <label class="myform-label">Female</label>
                         </div>
@@ -283,13 +320,13 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Address</label>
-                        <input type="text" class="myform-input" name="address">
+                        <input type="text" class="myform-input" name="address" required>
                     </div>
                 </div>
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">City</label>
-                        <select class="myform-input" name="city">
+                        <select class="myform-input" name="city" required>
                             <% for(let i in locals.cities){ %>
                                 <option>
                                     <%= cities[i] %>
@@ -304,7 +341,7 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Zip</label>
-                        <input type="text" class="myform-input" name="zip">
+                        <input type="text" class="myform-input" name="zip" required>
                     </div>
                 </div>
 
@@ -312,7 +349,7 @@
                 <div class="flex-item">
                     <div class="flex-view-block">
                         <label class="myform-label">Password</label>
-                        <input type="password" class="myform-input" name="password">
+                        <input type="password" class="myform-input" name="password" required>
                     </div>
                 </div>
 
@@ -335,6 +372,19 @@
     </div>
 </div>
 
+<% if(typeof locals.notification != "undefined"){ %>
+    <% if(notification.status == true){ %>
+        <div class="callout">
+            <div class="callout-header"><%= notification.header %> </div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+            <div class="callout-container">
+              <p><%= notification.text %></p>
+              <p><strong>Click To close</strong></p>
+            </div>
+          </div>
+    <% } %> 
+<% } %> 
+
 
 <script>
     $(".loginform").show()
@@ -348,5 +398,9 @@
     $("#signupButton").click(500, function () {
         $(".formbox").show()
         $(".loginform").hide()
+    })
+
+    $(".callout").click(function(){
+        $(this).hide()
     })
 </script>

@@ -4,6 +4,7 @@
  */
 
 
+
 exports.index = async(req, res) => {
   res.render('index');
 }
@@ -33,6 +34,10 @@ exports.signin = async(req, res) => {
   let cities = ["Dhaka", "Chittagong", "Khulna", "Sylhet", "Rajshahi", "Mymensingh", "Barisal", "Rangpur", "Comilla", "Narayanganj", "Gazipur"]
   res.render('signin', {cities, userType});
 }
+
+// Signin
+
+
 
 exports.bar = async(req, res) => {
   // var a = async ()=> require('../models/newaz');
