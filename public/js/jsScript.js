@@ -50,10 +50,8 @@ function loader() {
 }
 
 // CALLOUT NOTIFICATION SCRIPT ALVI NEEDED JQUERY
-$("#formdata").hide()
-
-$("#formbutton").click(function(){
-    $("#formdata").slideToggle()
+$(".callout").click(function(){
+  $(this).hide()
 })
 
 
