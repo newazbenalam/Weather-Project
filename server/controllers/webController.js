@@ -35,3 +35,7 @@ exports.signin = async(req, res) => {
   res.render('signin', {cities, userType});
 }
 
+
+exports.userdashboard = async(req, res) => {
+  res.render('userdashboard');
+}

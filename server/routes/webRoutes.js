@@ -1,13 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const webController = require('../controllers/webController');
+const fileuploads = require('../controllers/fileupload');
 
 // 
 const signinjs = require('../controllers/signin')
 const bodyParser = require("body-parser")
 const urlencodedParser = bodyParser.urlencoded({exteded: false})
+router.use(urlencodedParser)
 
-const graph = require('../models/graph')
+const multerUpload = require("../controllers/multer")
+router.use(multerUpload.single("csvfile"))
+
+const graph = require('../models/graph');
+const fileUpload = require('express-fileupload');
 
 /**
  * App Routes here
@@ -19,11 +25,13 @@ router.get('/graphs', webController.graphs);
 router.get('/map', webController.map);
 router.get('/rank', webController.rank);
 router.get('/signin', webController.signin);
+router.get('/userdashboard', webController.userdashboard);
 
 // Signin POST
 router.post("/signin", urlencodedParser, signinjs.signupform)
 router.post("/userpage", urlencodedParser, signinjs.signinform)
 
+router.post("/csvupload", fileuploads.csvupload)
 
 router.get('/bar', graph.bar);
 router.get('/scatter', graph.scatter);

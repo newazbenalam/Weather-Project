@@ -44,7 +44,7 @@ exports.signinform = async(req, res)=>{
     let email = req.body.loginemail
     let password = req.body.loginpassword
     
-    let sql = `SELECT email, password FROM User_t WHERE email = '${email}' AND password = '${password}';`
+    let sql = `SELECT email, password, userType, first_name, last_name FROM User_t WHERE email = '${email}' AND password = '${password}';`
         connection.query(sql, (err, result)=>{
             let notification = {}
             try{
@@ -56,7 +56,8 @@ exports.signinform = async(req, res)=>{
                     res.render("signin", {notification})
                 }
                 else if(result[0].email === email && result[0].password === password){
-                    res.send("USERPAGE DIRECTORY TO BE CONNECTED!")
+                    let userdetail = {status: true, usertype: result[0].userType, name: result[0].first_name+" "+result[0].last_name, email: result[0].email}
+                    res.render("userdashboard", {userdetail})
                 }
             }
             catch(err){

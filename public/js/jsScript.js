@@ -49,6 +49,14 @@ function loader() {
   document.querySelector(".loader-container").classList.add("active");
 }
 
+// CALLOUT NOTIFICATION SCRIPT ALVI NEEDED JQUERY
+$("#formdata").hide()
+
+$("#formbutton").click(function(){
+    $("#formdata").slideToggle()
+})
+
+
 /*document.querySelector("#dark-mode-toggle-mb").onclick = () => {
     document.documentElement.classList.toggle("dark");
 };*/
