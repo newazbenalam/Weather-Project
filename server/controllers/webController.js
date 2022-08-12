@@ -36,3 +36,7 @@ exports.signin = async(req, res) => {
 
 }
 
+
+exports.userdashboard = async(req, res) => {
+  res.render('userdashboard');
+}
