@@ -12,6 +12,7 @@ require('./server/controllers/mysql');
 app.use(express.static(fullpath));
 app.use(expressLayouts);
 
+// app.set('views', './components');
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
