@@ -386,18 +386,27 @@
         font-size: 1rem;
     }
 
+    .master-box .form-view-block{
+        padding: 0.7rem 0.2rem;
+    }
+
+    .master-box .flex-view-block-form{
+        padding: 0.2rem;
+    }
+
     .master-box .flex-view-block{
         padding: 0.5rem;
     }
+
     
     .master-box .flex-view-inline{
         padding: 0.5rem;
     }
     
     .master-box .myform-input{
-        font-size: 0.7rem;
-        height: 1.2rem;
-        padding: 0 0.1rem;
+        font-size: 1rem;
+        height: 1.6rem;
+        padding: 0.2rem 0.4rem;
     }
 }
 
