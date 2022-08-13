@@ -1,41 +1,45 @@
 <%- include('./components/sideBaar_visibility.ejs') -%>
 
 <div class="card-wrapper">
+    <div class="profile-card rounded-lg shadow">
+        <% if(typeof locals.userdetail != "undefined"){ %>
+            <% if(userdetail.status == true){ %>
+                <div class="profile-item-full">
+                    <p>Hello</p>
+                </div>
+                <div class="profile-item-left">
+                    <p>User Type</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.usertype %></p>
+                </div>
+                <div class="profile-item-left">
+                    <p>Name</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.name %></p>
+                </div>
+                <div class="profile-item-left">
+                    <p>Email</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.email %></p>
+                </div>                                    
+            <% } %>  
+        <% } %>     
+    </div>           
+</div>
+
+<div class="card-wrapper">
     <div class="master-box bg-white dark:bg-dark-second shadow rounded-lg">
         <div class="flex-container-block">
             <div class="cardbox">
                 <div class="card-row">                     
-                    <div class="flex-item">                    
+                    <!-- <div class="flex-item">                    
                         <div class="flex-view-block">                        
-                            <div class="profile-card">
-                                <div class="profile-item-full">
-                                    <p>Hello</p>
-                                </div>
-                                <% if(typeof locals.userdetail != "undefined"){ %>
-                                    <% if(userdetail.status == true){ %>
-                                        <div class="profile-item-left">
-                                            <p>User Type</p>
-                                        </div>
-                                        <div class="profile-item-right">
-                                            <p><%= userdetail.usertype %></p>
-                                        </div>
-                                        <div class="profile-item-left">
-                                            <p>Name</p>
-                                        </div>
-                                        <div class="profile-item-right">
-                                            <p><%= userdetail.name %></p>
-                                        </div>
-                                        <div class="profile-item-left">
-                                            <p>Email</p>
-                                        </div>
-                                        <div class="profile-item-right">
-                                            <p><%= userdetail.email %></p>
-                                        </div>                                    
-                                    <% } %>  
-                                <% } %>     
-                            </div>                                                                     
+                                                          
                         </div>    
-                    </div>
+                    </div> -->
     
                     <div class="card-row">
                         <div class="flex-item">                    
@@ -64,8 +68,8 @@
     
                         <div id="formdata" class="flex-item">                    
                             <div class="flex-view-block-form">
-                                <div class="main-form">
-                                    <h1>Data Entry Set</h1>
+                                <div class="main-form ">
+                                    <h1 class="font-bold text-xl">Data Entry Set</h1>
                                     <form class="formbox" method="post" action="userdashboard">
     
                                         <div class="form-item">
