@@ -3,6 +3,7 @@ const router = express.Router();
 const webController = require('../controllers/webController');
 const fileuploads = require('../controllers/fileupload');
 const userDataEntry = require('../controllers/userDataEntry');
+const adminController = require('../controllers/admin');
 
 // 
 const signinjs = require('../controllers/signin')
@@ -20,6 +21,9 @@ const { userDataEntryForm } = require('../controllers/userDataEntry');
 /**
  * App Routes here
  */
+
+
+// GET REQUESTS
 router.get('/', webController.home);
 router.get('/home', webController.index);
 router.get('/aqi', webController.aqi);
@@ -27,9 +31,11 @@ router.get('/graphs', webController.graphs);
 router.get('/map', webController.map);
 router.get('/rank', webController.rank);
 router.get('/signin', webController.signin);
-router.get('/userdashboard', webController.userdashboard);
+router.get('/admin', adminController.admin);
 
-// Signin POST
+
+//POST REQUESTS
+router.post("/userdashboard", urlencodedParser, adminController.adminLoginClick)
 router.post("/signin", urlencodedParser, signinjs.signupform)
 router.post("/userpage", urlencodedParser, signinjs.signinform)
 router.post("/csvupload", fileuploads.csvupload)

@@ -52,7 +52,7 @@ exports.signinform = async(req, res)=>{
                 console.log(result)
                 
                 if(result.length === 0){
-                    notification = {status: true, header: "Cannot Login", text: "Username or Password might be incorrect."}
+                    notification = {status: true, header: "Cannot Login", text: "Email or Password might be incorrect."}
                     res.render("signin", {notification})
                 }
                 else if(result[0].email === email && result[0].password === password){
