@@ -4,6 +4,7 @@ const webController = require('../controllers/webController');
 const fileuploads = require('../controllers/fileupload');
 const userDataEntry = require('../controllers/userDataEntry');
 const adminController = require('../controllers/admin');
+const searchController = require('../controllers/search');
 
 // 
 const signinjs = require('../controllers/signin')
@@ -34,12 +35,15 @@ router.get('/signin', webController.signin);
 router.get('/admin', adminController.admin);
 
 
+
+
 //POST REQUESTS
 router.post("/signin", urlencodedParser, signinjs.signupform)
 router.post("/userpage", urlencodedParser, signinjs.signinform)
 router.post("/csvupload", fileuploads.csvupload)
 router.post("/userdashboardAdmin", urlencodedParser, adminController.adminLoginClick)
 router.post("/userdashboard", urlencodedParser, userDataEntry.userDataEntryForm)
+router.post('/', urlencodedParser, searchController.search);
 
 
 // NEWAZ GRAPHS

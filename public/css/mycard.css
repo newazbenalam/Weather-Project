@@ -93,6 +93,20 @@
     padding: 0 0.2rem;
 }
 
+.master-box .form-container-block{
+    margin: 0 auto;
+    display: flex;
+    flex: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 0.2rem;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 15px;
+}
+
 .master-box .cardbox{
     width: 100%;             
     display: flex;
