@@ -202,3 +202,21 @@ main > main-left {
   padding: 0%;
 }
 
+input[type=submit], .submit{
+  background: rgb(14, 14, 14);
+  color: #ffffff;
+  padding: 8px 14px 6px 14px;
+  border: none;
+  margin: 0 auto;
+  width: auto;
+  max-width: 450px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  transition: .1s ease-in;
+}
+
+  input[type=submit]:hover, .submit:hover{
+    background: rgb(65, 65, 65);
+
+  }

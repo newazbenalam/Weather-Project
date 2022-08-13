@@ -11,11 +11,11 @@
 
 
 .profile-card{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex: 100%;
+    /* align-items: center; */
+    justify-content: center;
+    /* flex: 100%; */
     flex-wrap: wrap;
     min-height: 5vh;
     font-size: 1.5rem;
@@ -50,7 +50,7 @@
 }
 
 
-@media only screen and (max-width: 350px){
+@media only screen and (max-width: 400px){
     .profile-card{
         font-size: 1rem;
     }
@@ -67,15 +67,9 @@
 /* ************************** */
 
 
-.master-box{            
-    width: 100%;
-    margin: 0 auto;
-    background-color: inherit;
+/* .master-box{            
     color: var(--color);
-    border-radius: 20px;
-    padding: 1rem 0;
-    overflow: auto;
-}
+} */
 
 .master-box h1{
     text-align: center;
@@ -83,13 +77,9 @@
 
 
 .master-box .flex-container-block{
-    margin: 0 auto;
     display: flex;
     flex: 100%;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;
     padding: 0 0.2rem;
 }
 
@@ -109,7 +99,7 @@
 
 
 .master-box .flex-item{
-    flex: 100%;
+    /* flex: 100%; */
     margin-bottom: 1.5rem;
     padding: 0 .5rem;
 }
@@ -139,9 +129,9 @@
     justify-content: flex-start;
     flex-direction: column;
     padding: 1rem 0.8rem;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(180, 180, 180);
-    box-shadow: 0 0 0.5rem rgb(90, 90, 90);
+    /* background-color: rgb(245, 245, 245); */
+    /* border: 1px solid rgb(180, 180, 180); */
+    /* box-shadow: 0 0 0.5rem rgb(90, 90, 90); */
     border-radius: 20px;
     height: 100%;
     row-gap: 1rem;
@@ -153,9 +143,9 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     padding: 1rem;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(180, 180, 180);
-    box-shadow: 0 0 0.5rem rgb(90, 90, 90);
+    /* background-color: rgb(245, 245, 245); */
+    /* border: 1px solid rgb(180, 180, 180); */
+    /* box-shadow: 0 0 0.5rem rgb(90, 90, 90); */
     border-radius: 20px;
     column-gap: 0.5rem;
     row-gap: 1rem;
@@ -165,10 +155,10 @@
 /* <><><><><><> FORM  <><><><><><><><> */
 
 .master-box .flex-view-block-form{
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(180, 180, 180);
-    box-shadow: 0 0 0.5rem rgb(90, 90, 90);
-    border-radius: 20px;
+    /* background-color: rgb(245, 245, 245); */
+    /* border: 1px solid rgb(180, 180, 180); */
+    /* box-shadow: 0 0 0.5rem rgb(90, 90, 90); */
+    /* border-radius: 20px; */
     height: 100%;
     padding: 1rem;    
     margin: 0 auto;
@@ -230,6 +220,7 @@
 
 
 .master-box .myform-label{
+    justify-content: content;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -244,14 +235,14 @@
     background-color: var(--input-color);
     border: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 6px rgb(240, 240, 240);
+    /* box-shadow: 1px 1px 6px rgb(240, 240, 240); */
     outline-style: outset;
     outline-color: rgb(75, 75, 75);
 }
 
 
 .master-box input[type = radio]{
-    box-shadow: none;
+    /* box-shadow: none; */
     outline-style: none;
     outline-color: none;
 }
@@ -262,7 +253,7 @@
 }
 
 .master-box .block-button-custom{
-    width: 100%;
+    /* width: 100%; */
     border: none;
     background-color: var(--button-color);
     color: var(--button-font-color);
@@ -451,7 +442,8 @@
     width: 100%;
     color: white;
     font-weight: bold;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+    opacity: 98%;
 }
     
     #view-table td, #view-table th {

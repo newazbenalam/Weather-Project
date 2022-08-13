@@ -23,13 +23,13 @@ document.addEventListener(
   setTimeout(() => 100)
 );
 
-setTimeout(() => {
-  if (localStorage.getItem("theme") == "true") {
-    document.documentElement.classList.toggle("dark");
-    console.log(localStorage.getItem("theme"));
-  }
-  console.log(localStorage.getItem("theme"));
-}, 0);
+// setTimeout(() => {
+//   if (localStorage.getItem("theme") == "true") {
+//     document.documentElement.classList.toggle("dark");
+//     console.log(localStorage.getItem("theme"));
+//   }
+//   console.log(localStorage.getItem("theme"));
+// }, 0);
 
 function dark_mode() {
   if (localStorage.getItem("theme") == "true") {
@@ -54,6 +54,9 @@ $(".callout").click(function(){
   $(this).hide()
 })
 
+$('html, body').animate({
+  scrollTop: $("#formbutton").offset().top
+}, 2000);
 
 /*document.querySelector("#dark-mode-toggle-mb").onclick = () => {
     document.documentElement.classList.toggle("dark");
