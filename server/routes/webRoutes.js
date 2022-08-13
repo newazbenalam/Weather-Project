@@ -35,11 +35,11 @@ router.get('/admin', adminController.admin);
 
 
 //POST REQUESTS
-router.post("/userdashboard", urlencodedParser, adminController.adminLoginClick)
 router.post("/signin", urlencodedParser, signinjs.signupform)
 router.post("/userpage", urlencodedParser, signinjs.signinform)
 router.post("/csvupload", fileuploads.csvupload)
 router.post("/userdashboard", urlencodedParser, userDataEntry.userDataEntryForm)
+router.post("/userdashboard", urlencodedParser, adminController.adminLoginClick)
 
 
 // NEWAZ GRAPHS
