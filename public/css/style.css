@@ -220,3 +220,48 @@ main > main-left {
     background: rgb(65, 65, 65);
 
   }
+
+/* Aqi Card */
+  .aqi-card{
+    display: absolute;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(7, 7, 7);
+}
+
+.aqi-card .aqi-flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;        
+    padding: 0.5rem;
+}
+
+.aqi-card .aqi-index{
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 20px;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.aqi-card table{
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: rgb(168, 168, 168);
+}
+
+.aqi-card table thead{
+    background-color: rgb(109, 109, 109);
+}
+
+.aqi-card table, th, td{
+    border: 2px solid rgb(151, 151, 151);
+    border-collapse: collapse;
+}
+
+@media (max-width: 600px){
+    .aqi-card .aqi-flexbox{
+        padding: 0.8rem;
+    }
+}
