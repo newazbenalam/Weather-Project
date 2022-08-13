@@ -26,8 +26,8 @@
     <% if(typeof locals.aqiCard != "undefined"){ %>
         <div class="aqi-card bg-white dark:bg-dark-second dark:text-dark-txt shadow">
             <div class="aqi-flexbox">
-                <h1> <strong>Air Quality in Dhaka</strong></h1>
-                <p>Air Quality index AQI and PM 2.5 air pollution in Dhaka</p>
+                <h1> <strong>Air Quality in <%= aqiCard[0].Division %></strong></h1>
+                <p>Air Quality index AQI and PM <%= aqiCard[0].PM25 %> air pollution in <%= aqiCard[0].Division %></p>
             </div>   
         
             <div class="aqiColor aqi-flexbox mx-3 shadow rounded" style="background-color: crimson;">
@@ -44,7 +44,7 @@
                 <h2>What is the current air quality in <span><%= aqiCard[0].Division %></span>?</h2>
                 <h2>Lastest Date:<%= aqiCard[0].time %></h2>
             </div>
-            <div class="aqi-flexbox">
+            <div class="aqi-flexbox text-black">
                 <table>
                     <thead>
                         <tr scope="row" class="px-2">
