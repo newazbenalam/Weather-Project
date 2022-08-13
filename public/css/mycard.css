@@ -72,7 +72,7 @@
     margin: 0 auto;
     background-color: inherit;
     color: var(--color);
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 1rem 0;
     overflow: auto;
 }
@@ -111,26 +111,26 @@
 .master-box .flex-item{
     flex: 100%;
     margin-bottom: 1.5rem;
-    padding: 0 .5rem;
+
 }
 
 
 .master-box .flex-item-75{
     flex: 75%;
     margin-bottom: 1.5rem;
-    padding: 0 .5rem;
+
 }
 
 .master-box .flex-item-50{
     flex: 50%;
     margin-bottom: 1.5rem;
-    padding: 0 .5rem;
+
 }
 
 .master-box .flex-item-25{
     flex: 25%;
     margin-bottom: 1.5rem;
-    padding: 0 .5rem;
+
 }
 
 .master-box .flex-view-block{
@@ -142,7 +142,7 @@
     background-color: rgb(245, 245, 245);
     border: 1px solid rgb(180, 180, 180);
     box-shadow: 0 0 0.5rem rgb(90, 90, 90);
-    border-radius: 20px;
+    border-radius: 15px;
     height: 100%;
     row-gap: 1rem;
 }
@@ -156,7 +156,7 @@
     background-color: rgb(245, 245, 245);
     border: 1px solid rgb(180, 180, 180);
     box-shadow: 0 0 0.5rem rgb(90, 90, 90);
-    border-radius: 20px;
+    border-radius: 15px;
     column-gap: 0.5rem;
     row-gap: 1rem;
 }
@@ -168,7 +168,7 @@
     background-color: rgb(245, 245, 245);
     border: 1px solid rgb(180, 180, 180);
     box-shadow: 0 0 0.5rem rgb(90, 90, 90);
-    border-radius: 20px;
+    border-radius: 15px;
     height: 100%;
     padding: 1rem;    
     margin: 0 auto;
@@ -352,7 +352,7 @@
 
 @media only screen and (min-width: 280px) and (max-width: 400px){
     
-    .master-box .card-box{
+    .master-box .cardbox{
         padding: 0;
     }
 
