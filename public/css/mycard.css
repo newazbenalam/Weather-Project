@@ -414,7 +414,7 @@
   
   .callout-header {
     text-align: center;
-    padding: 25px 15px;
+    padding: 20px 15px;
     background: #555;
     font-size: 30px;
     color: white;
@@ -424,6 +424,14 @@
     padding: 15px;
     background-color: #ccc;
     color: black
+  }
+
+  .callout-close {
+    text-align: center;
+    padding: 5px 15px;
+    background: #555;
+    font-size: 15px;
+    color: white;
   }
   
   .closebtn {

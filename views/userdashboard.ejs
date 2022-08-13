@@ -195,12 +195,12 @@
 <% if(typeof locals.notification != "undefined"){ %>
     <% if(notification.status == true){ %>
         <div class="callout">
-            <div class="callout-header"><%= notification.header %> </div>
+            <div class="callout-header"><%= notification.header %></div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container">
               <p><%= notification.text %></p>
-              <p><strong>Click To close</strong></p>
             </div>
+            <div class="callout-close"><strong>Click To Close</strong></div>
           </div>
     <% } %> 
 <% } %> 
