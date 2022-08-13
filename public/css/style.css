@@ -225,7 +225,7 @@ main > main-left {
   .aqi-card{
     display: absolute;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     color: rgb(7, 7, 7);
 }
 
