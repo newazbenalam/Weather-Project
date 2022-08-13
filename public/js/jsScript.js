@@ -54,9 +54,8 @@ $(".callout").click(function(){
   $(this).hide()
 })
 
-$('html, body').animate({
-  scrollTop: $("#formbutton").offset().top
-}, 2000);
+// $('html, body').animate({
+//   scrollTop: $("#formbutton").offset().top}, 2000);
 
 /*document.querySelector("#dark-mode-toggle-mb").onclick = () => {
     document.documentElement.classList.toggle("dark");
