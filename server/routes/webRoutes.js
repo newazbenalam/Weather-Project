@@ -38,8 +38,8 @@ router.get('/admin', adminController.admin);
 router.post("/signin", urlencodedParser, signinjs.signupform)
 router.post("/userpage", urlencodedParser, signinjs.signinform)
 router.post("/csvupload", fileuploads.csvupload)
+router.post("/userdashboardAdmin", urlencodedParser, adminController.adminLoginClick)
 router.post("/userdashboard", urlencodedParser, userDataEntry.userDataEntryForm)
-router.post("/userdashboard", urlencodedParser, adminController.adminLoginClick)
 
 
 // NEWAZ GRAPHS

@@ -38,9 +38,4 @@ exports.signin = async(req, res) => {
 }
 
 
-exports.userdashboard = async(req, res) => {
-  let userdetail = {status: true, usertype: "Admin", name: "Admin", email: "admin@yahoo.com"}
-  formUsertype = ["EPA", "PurpleAir"]
-  res.render('userdashboard', {formUsertype, userdetail});
-}
 

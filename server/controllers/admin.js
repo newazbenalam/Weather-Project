@@ -32,7 +32,7 @@ exports.admin = async(req, res) => {
     if((req.body.adminEmail === admin[0].email || req.body.adminEmail === admin[1].email) && (req.body.adminPassword === admin[0].pass || req.body.adminPassword === admin[1].pass)){
       let userdetail = {status: true, usertype: "Admin", name: name, email: req.body.adminEmail}
       formUsertype = ["EPA", "PurpleAir"]
-      res.render('userdashboard', {formUsertype, userdetail});
+      res.render('userdashboardAdmin', {formUsertype, userdetail});
     }
     else{
       let notification = {status: true, header: "Cannot Login", text: "Email or Password might be incorrect."}
