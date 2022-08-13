@@ -57,7 +57,7 @@
                     </thead>
                     
                     <tr scope="row" class="px-2">
-                        <td><p class="aqiLevel"></p></td>
+                        <td><p><%= level %></p></td>
                         <td><p><%= aqiCard[0].PM25 %></p></td>
                         <td><p><%= aqiCard[0].PM25 %></p></td>
                         <td><p><%= aqiCard[0].Average_Temperature %></p></td>
@@ -70,45 +70,3 @@
 </div>
 
 </div>
-
-
-<script>
-    function myFunction(){
-        let level = $(".aqiIndex").innerText
-        let color = ''
-        let concern = ''
-
-        if(level >= 0 && level <= 50){
-            color = "green"
-            concern = "Good"
-        }
-        else if(level >= 51 && level <= 100){
-            color = "yellow"
-            concern = "Moderate"
-        }
-        else if(level >= 101 && level <= 150){
-            color = "orange"
-            concern = "Unhealty Sensitive"
-        }
-        else if(level >= 151 && level <= 200){
-            color = "red"
-            concern = "Unhealthy"
-        }
-        else if(level >= 201 && level <= 300){
-            color = "purple"
-            concern = "Very Unhealthy"
-        }
-        else if(level >= 300){
-            color = "maroon"
-            concern = "Hazardous"
-        }          
-        
-        $(".aqiColor").css("background-color", `${color.toLowerCase()}`)           
-        $(".aqiLevel").html(concern)
-    }
-
-</script>
-
-
-
-
