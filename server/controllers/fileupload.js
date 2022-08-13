@@ -9,12 +9,14 @@ const csv = require("csv-parser")
 const fs = require("fs")
 
 exports.csvupload = async(req, res)=>{
+    console.log(req.file)
     if(req.file.fieldname === "csvfile"){ //Multer
         if(req.file.mimetype === "text/csv"){
             csvRead(req, res)
         }
         else{
-            res.send("Not a csv file")
+            let notification = {status: true, header: "Incorrect file.", text: `Please Enter a csv file, you've entered a file with a mimetype of ${req.file.mimetype}`}
+            res.render("userdashboard", {notification})
         }
     }
 }
