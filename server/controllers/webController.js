@@ -3,6 +3,8 @@
  * Homepage
  */
 
+const e = require("connect-flash");
+
 
 
 exports.index = async(req, res) => {
@@ -38,5 +40,8 @@ exports.signin = async(req, res) => {
 
 
 exports.userdashboard = async(req, res) => {
-  res.render('userdashboard');
+  let userdetail = {status: true, usertype: "Admin", name: "Admin", email: "admin@yahoo.com"}
+  formUsertype = ["EPA", "PurpleAir"]
+  res.render('userdashboard', {formUsertype, userdetail});
 }
+
