@@ -57,7 +57,16 @@ exports.signinform = async(req, res)=>{
                 }
                 else if(result[0].email === email && result[0].password === password){
                     let userdetail = {status: true, usertype: result[0].userType, name: result[0].first_name+" "+result[0].last_name, email: result[0].email}
-                    res.render("userdashboard", {userdetail})
+
+                    let formUsertype = []
+                    if(result[0].userType === "Ministry" || result[0].userType === "Admin"){
+                        formUsertype = ["EPA", "PurpleAir"]
+                    }
+                    else{
+                        formUsertype = [`${result[0].userType}`]
+                    }
+
+                    res.render("userdashboard", {userdetail, formUsertype})
                 }
             }
             catch(err){

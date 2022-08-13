@@ -67,66 +67,80 @@
                             <div class="main-form">
                                 <h1>Data Entry Set</h1>
                                 <form class="formbox" method="post" action="userdashboard">
+
+                                    <div class="form-item">
+                                        <div class="form-view-block">
+                                            <label class="myform-label">Enter Data of User:</label>
+                                            <select class="myform-input" name="usertype" required>
+                                                <% for(let i in locals.formUsertype){ %>
+                                                    <option>
+                                                        <%= formUsertype[i] %>
+                                                    </option>
+                                                <% } %>
+                                            </select>
+                                        </div>    
+                                    </div>
+
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Daily</label>
-                                            <input type="date" class="myform-input" name="Daily">
+                                            <input type="date" class="myform-input" name="Daily" required>
                                         </div>    
                                     </div>
                         
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Location</label>
-                                            <input type="text" class="myform-input" name="location">
+                                            <input type="text" class="myform-input" name="Location" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
-                                            <label class="myform-label">latitude</label>
-                                            <input type="text" class="myform-input" name="latitude">
+                                            <label class="myform-label">Latitude</label>
+                                            <input type="number" class="myform-input" name="lat" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Longitude</label>
-                                            <input type="text" class="myform-input" name="logitude">
+                                            <input type="number" class="myform-input" name="lon" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Median</label>
-                                            <input type="text" class="myform-input" name="median">
+                                            <input type="number" class="myform-input" name="median" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Mean</label>
-                                            <input type="text" class="myform-input" name="mean">
+                                            <input type="number" class="myform-input" name="mean" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Max</label>
-                                            <input type="text" class="myform-input" name="max">
+                                            <input type="number" class="myform-input" name="max" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item-50">
                                         <div class="form-view-block">
                                             <label class="myform-label">Sum</label>
-                                            <input type="text" class="myform-input" name="sum">
+                                            <input type="number" class="myform-input" name="sum" required>
                                         </div>    
                                     </div>
 
                                     <div class="form-item">
                                         <div class="form-view-block">
                                             <label class="myform-label">Count</label>
-                                            <input type="text" class="myform-input" name="count">
+                                            <input type="number" class="myform-input" name="count" required>
                                         </div>    
                                     </div>
 
