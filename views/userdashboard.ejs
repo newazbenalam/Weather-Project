@@ -3,46 +3,38 @@
 <div class="card-wrapper">
     <div class="master-box bg-white dark:bg-dark-second shadow rounded-lg">
         <div class="flex-container-block">
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <div class="flex flex-col items-center warp">
-                            <% if(typeof locals.userdetail !="undefined" ){ %>
-                                <div class="profile-card">
-                                    <div class="profile-item-full">
-                                        <p class="text-xl md:text-2xl">Hello</p>
-                                    </div>
-                                    <% } %>
-                                        <% if(typeof locals.userdetail !="undefined" ){ %>
-                                            <% if(userdetail.status==true){ %>
-                                                <div class="profile-item-left">
-                                                    <p>User Type</p>
-                                                </div>
-                                                <div class="profile-item-right">
-                                                    <p>
-                                                        <%= userdetail.usertype %>
-                                                    </p>
-                                                </div>
-                                                <div class="profile-item-left">
-                                                    <p>Name</p>
-                                                </div>
-                                                <div class="profile-item-right">
-                                                    <p>
-                                                        <%= userdetail.name %>
-                                                    </p>
-                                                </div>
-                                                <div class="profile-item-left">
-                                                    <p>Email</p>
-                                                </div>
-                                                <div class="profile-item-right">
-                                                    <p>
-                                                        <%= userdetail.email %>
-                                                    </p>
-                                                </div>
-                                                <% } %>
-                                                    <% } %>
+            <div class="cardbox">
+                <div class="card-row">                     
+                    <div class="flex-item">                    
+                        <div class="flex-view-block">                        
+                            <div class="profile-card">
+                                <div class="profile-item-full">
+                                    <p>Hello</p>
                                 </div>
-                        </div>
+                                <% if(typeof locals.userdetail != "undefined"){ %>
+                                    <% if(userdetail.status == true){ %>
+                                        <div class="profile-item-left">
+                                            <p>User Type</p>
+                                        </div>
+                                        <div class="profile-item-right">
+                                            <p><%= userdetail.usertype %></p>
+                                        </div>
+                                        <div class="profile-item-left">
+                                            <p>Name</p>
+                                        </div>
+                                        <div class="profile-item-right">
+                                            <p><%= userdetail.name %></p>
+                                        </div>
+                                        <div class="profile-item-left">
+                                            <p>Email</p>
+                                        </div>
+                                        <div class="profile-item-right">
+                                            <p><%= userdetail.email %></p>
+                                        </div>                                    
+                                    <% } %>  
+                                <% } %>     
+                            </div>                                                                     
+                        </div>    
                     </div>
 
 

@@ -137,6 +137,16 @@
     row-gap: 1rem;
 }
 
+.master-box .flex-view-block-file{
+    padding: 1rem 0.8rem;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(180, 180, 180);
+    box-shadow: 0 0 0.5rem rgb(90, 90, 90);
+    border-radius: 15px;
+    height: 100%;
+    row-gap: 1rem;
+}
+
 .master-box .flex-view-inline{
     display: flex;
     align-items: flex-start;
@@ -377,6 +387,13 @@
         height: 2.3rem;
         padding: 0.3rem 0.6rem;
     }
+}
+
+.master-box .file-upload{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 
