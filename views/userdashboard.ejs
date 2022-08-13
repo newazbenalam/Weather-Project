@@ -164,17 +164,17 @@
                         <div class="card-row">
                             <div class="flex-item">
                                 <div class="flex-view-block">                                
-                                    <div class="table_container">
+                                    <div class="table_container w-full">
                                         <h1 style="text-align: center;">TABLE INSERTED INTO DB</h1>
-                                            <table id="view-table">
+                                            <table id="view-table" class="w-full">
                                                 <tr>
-                                                    <% for(let i = 0; i < Object.keys(uploadContent[0]).length; i++){ %>
+                                                    <% for(let i = 0; i < 5; i++){ %>
                                                         <th><%= Object.keys(uploadContent[0])[i] %></th>   
                                                     <% } %>                        
                                                 </tr>
                                                 <% for(let i = 0; i < uploadContent.length; i++){ %>
                                                     <tr>
-                                                        <% for(let j = 0; j < Object.values(uploadContent[i]).length; j++){ %>
+                                                        <% for(let j = 0; j < 5; j++){ %>
                                                             <td><p><%= Object.values(uploadContent[i])[j] %></p></td>
                                                         <% } %>  
                                                     </tr>
