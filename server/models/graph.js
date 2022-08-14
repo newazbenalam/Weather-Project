@@ -1,11 +1,19 @@
 var connection = require('../controllers/mysql');
 
 let tbname = 'epa_daily_t'
-let sql = `SELECT mean, Daily FROM ${tbname}`
 let arrX = [], arrY = [], arr2D = [];
 
 exports.bar = async(req, res) => {
-  connection.query(sql, function (error, results) {
+  let sql = `SELECT
+  avg(mean),
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    ${tbname}
+  GROUP BY MONTH ORDER BY DAY;`;
+
+    connection.query(sql, function (error, results) {
     if (error) throw error;
     
 
@@ -20,7 +28,7 @@ exports.bar = async(req, res) => {
 }
 
 exports.scatter = async(req, res) => {
-  // sql = `SELECT mean, Daily FROM ${tbname} WHERE Daily like "%/2020";`
+  let sql = `SELECT avg(mean), Daily FROM ${tbname} WHERE Daily  like "%/2020" GROUP BY Daily ORDER BY Daily;`
   connection.query(sql, function (error, results) {
     if (error) throw error;
     

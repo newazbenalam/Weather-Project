@@ -68,6 +68,7 @@ function plotgraph (x, y, type){
           color: "#C8A2C8",
           line: {
             width: 2.5,
+            height: 2,
           },
         },
       };
@@ -77,14 +78,14 @@ function plotgraph (x, y, type){
         graphDiv,
         [trace1],
         {
-          title: "Nice Bar Graph",
+          title: "Year Average",
           font: { size: 18 },
         },
         { responsive: true}
       );
 }
 
-plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17], "bar" );
+// plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17], "bar" );
 
 function bar() {
     var arrx=[], arry=[], arr = [arrx,arry];
@@ -98,10 +99,12 @@ function bar() {
 
     //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
     //   console.log(arr[0]);
-        plotgraph(arr[0], arr[1], "bar");
+        plotgraph(arr[0], arr[1], "line");
 
     };
   }
+
+bar();
 
   function scatter() {
     var arrx=[], arry=[], arr = [arrx,arry];
