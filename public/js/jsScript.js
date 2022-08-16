@@ -88,18 +88,56 @@ function plotgraph (x, y, type){
 // plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17], "bar" );
 
 function bar() {
-    var arrx=[], arry=[], arr = [arrx,arry];
+    var arrx=[], arry=[], arr1 = [arrx,arry], arr = [arr1];
     const Http = new XMLHttpRequest();
     const url = "/bar";
     Http.open("GET", url);
     Http.send();
   
     Http.onreadystatechange = (e) => {
-      arr = JSON.parse(Http.response);
+      arr[0] = JSON.parse(Http.response);
 
     //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
     //   console.log(arr[0]);
-        plotgraph(arr[0], arr[1], "line");
+        // plotgraph(arr[0], arr[1], "line");
+        var trace1 = {
+          type: "line",
+          x: arr[0][0],
+          y: arr[0][1],
+          name: 'epa_mean',
+          marker: {
+            color: "#C8A2C8",
+            line: {
+              width: 2.5,
+              height: 2,
+            },
+          },
+        };
+
+        var trace2 = {
+          type: "line",
+          x: arr[0][0],
+          y: arr[0][1],
+          name: 'pa_mean',
+          marker: {
+            color: "#75DFBC",
+            line: {
+              width: 2.5,
+              height: 2,
+            },
+          },
+        };
+        
+        
+        Plotly.newPlot(
+          graphDiv,
+          [trace1, trace2],
+          {
+            title: "Year Average",
+            font: { size: 18 },
+          },
+          { responsive: true}
+        );
 
     };
   }
