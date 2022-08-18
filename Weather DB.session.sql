@@ -19,7 +19,6 @@ SELECT
     STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
     DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
     DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
-
 FROM
     purpleair_daily_t
 GROUP BY YEAR;
@@ -55,3 +54,13 @@ SELECT
   FROM
     epa_daily_t
   GROUP BY YEAR ORDER BY YEAR;
+
+-- @block
+SELECT
+    avg(mean),
+    STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+    DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+    DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+FROM
+    purpleair_daily_t
+GROUP BY YEAR;

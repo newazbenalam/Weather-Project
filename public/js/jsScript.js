@@ -111,7 +111,7 @@ function bar() {
         x: arr[0],
         y: arr[1],
         marker: {
-          color: "#C8A2C8",
+          color: "#8BA6A6",
           line: {
             width: 2.5,
             height: 2,
@@ -193,7 +193,7 @@ function line() {
         type: "line",
         x: arr[0],
         y: arr[1],
-        name: "pa_mean",
+        name: "epa_mean",
         marker: {
           color: "#75DFBC",
           line: {
@@ -219,7 +219,7 @@ function line() {
 
       var layout = {
         title: {
-          text: "Average year",
+          text: "Average month",
           font: {
             family: "monospace",
             size: 24,
@@ -259,7 +259,8 @@ function line() {
     });
 }
 
-bar();
+// bar();
+line();
 
 function getSelectValue() {
   var selectedValue = String(document.getElementById("list").value);
@@ -287,7 +288,7 @@ function getSelectValue() {
             x: arr[0],
             y: arr[1],
             marker: {
-              color: "#C8A2C8",
+              color: "#8BA6A6",
               line: {
                 width: 2.5,
                 height: 2,

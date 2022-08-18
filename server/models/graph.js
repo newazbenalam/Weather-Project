@@ -149,7 +149,7 @@ exports.line_MONTH = async(req, res) => {
   DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
   FROM
     mean_t
-  GROUP BY MONTH ORDER BY MONTH;`;
+  GROUP BY MONTH ORDER BY DAY;`;
 
     connection.query(sql, function (error, results) {
     if (error) throw error;
