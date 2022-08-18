@@ -87,11 +87,13 @@ function plotgraph (x, y, type){
 
 // plotgraph( [1999, 2000, 2001, 2002],[10, 15, 13, 17], "bar" );
 let res;
+let state = "none";
 let arr = [[], [], []];
 
 function bar() {
   arr = [[], [], []];
   let url = "/bar";
+  state = "bar";
   fetch(url)
     .then((res) => res.json())
     .then((out) => {
@@ -176,6 +178,7 @@ function bar() {
 function line() {
   arr = [[], [], []];
   let url = "/line";
+  state = "line"
   fetch(url)
     .then((res) => res.json())
     .then((out) => {
@@ -258,28 +261,176 @@ function line() {
 
 bar();
 
-function getSelectValue()
-{
-    var selectedValue = String(document.getElementById("list").value);
-    for (let i = 0; i < res.length; i++) {
-      arr[0][i] = res[i][selectedValue];
-    }
-    Plotly.animate(
-      graphDiv,
-      {
-        data: [{ x: arr[0] }],
-        // traces: [0],
-      },
-      {
-        transition: {
-          duration: 500,
-          easing: "cubic-in-out",
-        },
-        frame: {
-          duration: 500,
-        },
-      }
-    );
+function getSelectValue() {
+  var selectedValue = String(document.getElementById("list").value);
+  let arr = [[], [], []];
+  let url = "/" + state + "_" + selectedValue;
+
+      // for (let i = 0; i < out.length; i++) {
+      //   arr[0][i] = out[i][selectedValue];
+      //   arr[1][i] = out[i].MEAN;
+      // }
+
+  switch (state) {
+    case "bar":
+      fetch(url)
+        .then((res) => res.json())
+        .then((out) => {
+          res = out;
+          for (let i = 0; i < out.length; i++) {
+            arr[0][i] = out[i][selectedValue];
+            arr[1][i] = out[i].MEAN;
+          }
+
+          var trace1 = {
+            type: state,
+            x: arr[0],
+            y: arr[1],
+            marker: {
+              color: "#C8A2C8",
+              line: {
+                width: 2.5,
+                height: 2,
+              },
+            },
+          };
+
+          var layout = {
+            title: {
+              text: "Bar Graph",
+              font: {
+                family: "monospace",
+                size: 24,
+              },
+            },
+            xaxis: {
+              title: {
+                text: "Date",
+                font: {
+                  family: "monospace",
+                  size: 18,
+                  color: "#7f7f7f",
+                },
+              },
+            },
+            yaxis: {
+              title: {
+                text: "PM2.5",
+                font: {
+                  family: "monospace",
+                  size: 18,
+                  color: "#7f7f7f",
+                },
+              },
+            },
+          };
+
+          Plotly.newPlot(graphDiv, [trace1], layout, { responsive: true });
+        });
+      break;
+    case "line":
+      fetch(url)
+        .then((res) => res.json())
+        .then((out) => {
+          res = out;
+
+          for (let i = 0; i < out.length; i++) {
+            arr[0][i] = out[i][selectedValue];
+            arr[1][i] = out[i].EPA_MEAN;
+            arr[2][i] = out[i].PA_MEAN;
+          }
+
+          var trace1 = {
+            type: "line",
+            x: arr[0],
+            y: arr[1],
+            name: "epa_mean",
+            marker: {
+              color: "#75DFBC",
+              line: {
+                width: 2.5,
+                height: 2,
+              },
+            },
+          };
+    
+          var trace2 = {
+            type: "line",
+            x: arr[0],
+            y: arr[2],
+            name: "pa_mean",
+            marker: {
+              color: "#C8A2C8",
+              line: {
+                width: 2.5,
+                height: 2,
+              },
+            },
+          };
+    
+          var layout = {
+            title: {
+              text: "Average " + selectedValue.toLowerCase(),
+              font: {
+                family: "monospace",
+                size: 24,
+              },
+            },
+            xaxis: {
+              title: {
+                text: "Date",
+                font: {
+                  family: "monospace",
+                  size: 18,
+                  color: "#7f7f7f",
+                },
+              },
+            },
+            yaxis: {
+              title: {
+                text: "PM2.5",
+                font: {
+                  family: "monospace",
+                  size: 18,
+                  color: "#7f7f7f",
+                },
+              },
+            },
+          };
+
+          Plotly.newPlot(graphDiv, [trace1, trace2], layout, {
+            responsive: true,
+          });
+        });
+
+      break;
+
+    default:
+      break;
+  }
+
+      //   Plotly.addTraces(graphDiv, [{y: arr[0]}, {y: arr[1]}]);
+      //   console.log(arr[0]);
+      // plotgraph(arr[0], arr[1], "line");
+
+
+      // Plotly.animate(
+      //   graphDiv,
+      //   {
+      //     data: [{x: arr[0]}, {y: arr[1]}],
+      //     // traces: [0],
+      //   },
+      //   {
+      //     transition: {
+      //       duration: 500,
+      //       easing: "cubic-in-out",
+      //     },
+      //     frame: {
+      //       duration: 500,
+      //     },
+      //   }
+      // );
+      // })
 }
 
   function scatter() {

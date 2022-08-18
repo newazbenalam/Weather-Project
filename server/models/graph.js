@@ -27,6 +27,54 @@ let arrX = [], arrY = [], arr2D = [];
 //   });
 // }
 
+exports.bar_day = async(req, res) => {
+  let sql = `SELECT
+  avg(mean) MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    ${tbname}
+  GROUP BY DAY ORDER BY DAY;`;
+
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+
+exports.bar_month = async(req, res) => {
+  let sql = `SELECT
+  avg(mean) MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    ${tbname}
+  GROUP BY MONTH ORDER BY MONTH;`;
+
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+
+exports.bar_year = async(req, res) => {
+  let sql = `SELECT
+  avg(mean) MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    ${tbname}
+  GROUP BY YEAR ORDER BY YEAR;`;
+
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+
 exports.bar = async(req, res) => {
   let sql = `SELECT
   avg(mean) MEAN,
@@ -43,7 +91,6 @@ exports.bar = async(req, res) => {
   });
 }
 
-
 exports.line = async(req, res) => {
   let sql = `SELECT
   avg(epa_mean) EPA_MEAN,
@@ -54,6 +101,55 @@ exports.line = async(req, res) => {
   FROM
     mean_t
   GROUP BY MONTH ORDER BY DAY;`;
+
+    connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+
+exports.line_DAY = async(req, res) => {
+  let sql = `SELECT
+  avg(epa_mean) EPA_MEAN,
+  avg(pa_mean) PA_MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    mean_t
+  GROUP BY DAY ORDER BY DAY;`;
+
+    connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+exports.line_YEAR = async(req, res) => {
+  let sql = `SELECT
+  avg(epa_mean) EPA_MEAN,
+  avg(pa_mean) PA_MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    mean_t
+  GROUP BY YEAR ORDER BY YEAR;`;
+
+    connection.query(sql, function (error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+}
+exports.line_MONTH = async(req, res) => {
+  let sql = `SELECT
+  avg(epa_mean) EPA_MEAN,
+  avg(pa_mean) PA_MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    mean_t
+  GROUP BY MONTH ORDER BY MONTH;`;
 
     connection.query(sql, function (error, results) {
     if (error) throw error;

@@ -48,7 +48,15 @@ router.post('/', urlencodedParser, searchController.search);
 
 // NEWAZ GRAPHS
 router.get('/bar', graph.bar);
+router.get('/bar_DAY', graph.bar_day);
+router.get('/bar_MONTH', graph.bar_month);
+router.get('/bar_YEAR', graph.bar_year);
+
 router.get('/line', graph.line);
+router.get('/line_DAY', graph.line_DAY);
+router.get('/line_MONTH', graph.line_MONTH);
+router.get('/line_YEAR', graph.line_YEAR); 
+
 router.get('/scatter', graph.scatter);
 
 module.exports = router;
