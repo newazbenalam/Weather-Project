@@ -30,7 +30,18 @@ FROM epa_daily_t
 ORDER BY niceDate DESC 
 
 -- @block
-SELECT E.Daily, avg(E.mean), avg(P.mean)
-FROM epa_daily_t AS E JOIN purpleair_daily_t AS P 
-ON E.Daily = P.Daily
+SELECT E.Daily, avg(E.mean) epa_mean, avg(P.mean) pa_mean
+FROM epa_daily_t AS E, purpleair_daily_t AS P 
+WHERE E.Daily = P.Daily
 GROUP BY E.Daily;
+
+-- @block
+SELECT
+  avg(epa_mean) EPA_MEAN,
+  avg(pa_mean) PA_MEAN,
+  STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+  FROM
+    mean_t
+  GROUP BY YEAR ORDER BY YEAR;

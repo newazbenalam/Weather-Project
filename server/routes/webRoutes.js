@@ -48,6 +48,7 @@ router.post('/', urlencodedParser, searchController.search);
 
 // NEWAZ GRAPHS
 router.get('/bar', graph.bar);
+router.get('/line', graph.line);
 router.get('/scatter', graph.scatter);
 
 module.exports = router;
