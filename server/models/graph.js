@@ -157,6 +157,29 @@ exports.line_MONTH = async(req, res) => {
   });
 }
 
+exports.division_DAY = async(req, res) => {
+  let sql = `SELECT
+  Division,
+  PM25,
+  time,
+  STR_TO_DATE(time, '%m/%d/%Y') AS DAY,
+  DATE_FORMAT(STR_TO_DATE(time, '%m/%d/%Y'), '%m/%Y') AS MONTH,
+  DATE_FORMAT(STR_TO_DATE(time, '%m/%d/%Y'), '%Y') AS YEAR
+FROM
+  final_train_data_t
+ORDER BY DAY`;
+
+  let sql1 = `SELECT Division, time, PM25 
+  FROM final_train_data_t
+  GROUP BY Division;`;
+  
+    connection.query(sql, function (error, results) {
+    if (error) throw error;
+    // const ds = new DataFrame(results);
+    res.send(results);
+  });
+}
+
 exports.scatter = async(req, res) => {
   let sql = `SELECT avg(mean), Daily FROM ${tbname} WHERE Daily  like "%/2020" GROUP BY Daily ORDER BY Daily;`
   connection.query(sql, function (error, results) {

@@ -434,6 +434,105 @@ function getSelectValue() {
       // })
 }
 
+function division(){
+  state = "division";
+  let url = "/division_DAY";
+  arr = [[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]]];
+  fetch(url)
+    .then((res) => res.json())
+    .then((out) => {
+      let sat = "";
+      let division = [];
+      let divIndex = 0;
+      for (let i = 0; i < out.length; i++) {
+        sat = "";
+        for (let j = 0; j < division.length; j++) {
+          if (division[j] === out[i].Division) {
+            sat = String(out[i].Division);
+            break;
+          }
+        }
+        if (sat === "") {
+          division.push(out[i].Division);
+        };
+
+        // arr[0].push(out[i].DAY);
+        // arr[0][i] = out[i].DAY;
+        for (divIndex = 0; divIndex < division.length; divIndex++) {
+          if (division[divIndex] === sat) {
+            // arr[divIndex+1].push(out[i].PM25);
+            arr[divIndex][0].push(out[i].DAY);
+            arr[divIndex][1].push(out[i].PM25);
+            break;
+          }
+        }
+        // arr[divIndex+1].push(out[i].PM25);
+      }
+      console.log(arr);
+
+      var trace = [];
+
+      for (let i = 0; i < division.length; i++) {
+        var traceBin = {
+          type: "line",
+          x: arr[i][0],
+          y: arr[i][1],
+          name: division[i],
+          marker: {
+            color: "#"+Math.floor(Math.random()*16777215).toString(16),
+            line: {
+              width: 2.5,
+              height: 2,
+            },
+          },
+        };
+        trace.push(traceBin)
+      }
+
+      var layout = {
+        title: {
+          text: "Division Line Chart",
+          font: {
+            family: "monospace",
+            size: 24,
+          },
+        },
+        xaxis: {
+          title: {
+            text: "Date",
+            font: {
+              family: "monospace",
+              size: 18,
+              color: "#7f7f7f",
+            },
+          },
+        },
+        yaxis: {
+          title: {
+            text: "PM2.5",
+            font: {
+              family: "monospace",
+              size: 18,
+              color: "#7f7f7f",
+            },
+          },
+        },
+      };
+
+      Plotly.newPlot(
+        graphDiv,
+        trace,
+        layout,
+        { responsive: true }
+      );
+    })
+    .catch((err) => {
+      throw err;
+    });
+  // getSelectValue.selectedValue = "DAY";
+  // getSelectValue();
+}
+
   function scatter() {
     var arrx=[], arry=[], arr = [arrx,arry];
     const Http = new XMLHttpRequest();

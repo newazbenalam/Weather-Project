@@ -19,10 +19,9 @@ const graph = require('../models/graph');
 const fileUpload = require('express-fileupload');
 const { userDataEntryForm } = require('../controllers/userDataEntry');
 
-/**
- * App Routes here
- */
-
+/*
+* App Routes here
+*/
 
 // GET REQUESTS
 router.get('/', webController.home);
@@ -55,7 +54,9 @@ router.get('/bar_YEAR', graph.bar_year);
 router.get('/line', graph.line);
 router.get('/line_DAY', graph.line_DAY);
 router.get('/line_MONTH', graph.line_MONTH);
-router.get('/line_YEAR', graph.line_YEAR); 
+router.get('/line_YEAR', graph.line_YEAR);
+
+router.get('/division_DAY', graph.division_DAY); 
 
 router.get('/scatter', graph.scatter);
 

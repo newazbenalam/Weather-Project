@@ -57,10 +57,19 @@ SELECT
 
 -- @block
 SELECT
-    avg(mean),
-    STR_TO_DATE(Daily, '%d/%m/%Y') AS DAY,
-    DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%m/%Y') AS MONTH,
-    DATE_FORMAT(STR_TO_DATE(Daily, '%d/%m/%Y'), '%Y') AS YEAR
+    Division,
+    PM25,
+    time,
+    STR_TO_DATE(time, '%m/%d/%Y') AS DAY,
+    DATE_FORMAT(STR_TO_DATE(time, '%m/%d/%Y'), '%m/%Y') AS MONTH,
+    DATE_FORMAT(STR_TO_DATE(time, '%m/%d/%Y'), '%Y') AS YEAR
 FROM
-    purpleair_daily_t
-GROUP BY YEAR;
+    final_train_data_t
+ORDER BY DAY;
+
+-- @block
+SELECT Division, time, PM25 
+FROM final_train_data_t
+GROUP BY Division;
+
+
