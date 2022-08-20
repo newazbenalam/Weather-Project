@@ -262,8 +262,9 @@ function line() {
 // bar();
 line();
 
+var selectedValue;
 function getSelectValue() {
-  var selectedValue = String(document.getElementById("list").value);
+  selectedValue = String(document.getElementById("list").value);
   let arr = [[], [], []];
   let url = "/" + state + "_" + selectedValue;
 
@@ -574,7 +575,7 @@ function division(){
   }
 
 function downloadCVS() {
-  const fileName = "report-DBMS-"+state+".csv";
+  const fileName = "report-DBMS-"+state+"-"+selectedValue+".csv";
 
   function convertToCSV(arr) {
     const array = [Object.keys(arr[0])].concat(arr);
@@ -601,7 +602,7 @@ function downloadCVS() {
     };
   })();
   // let url = "/division_DAY";
-  let url = state;
+  let url = state+"_"+selectedValue;
   fetch(url)
     .then((res) => res.json())
     .then((out) => {
