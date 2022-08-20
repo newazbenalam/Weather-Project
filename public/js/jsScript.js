@@ -435,7 +435,7 @@ function getSelectValue() {
 }
 
 function division(){
-  state = "division";
+  state = "division_DAY";
   let url = "/division_DAY";
   arr = [[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]]];
   fetch(url)
@@ -534,6 +534,7 @@ function division(){
 }
 
   function scatter() {
+    state = "scatter";
     var arrx=[], arry=[], arr = [arrx,arry];
     const Http = new XMLHttpRequest();
     const url = "/scatter";
@@ -573,20 +574,24 @@ function division(){
   }
 
 function downloadCVS() {
-  const fileName = "report-DBMS.csv";
+  const fileName = "report-DBMS-"+state+".csv";
+
   function convertToCSV(arr) {
-    const array = [Object.keys(arr[0])].concat(arr)
-  
-    return array.map(it => {
-      return Object.values(it).toString()
-    }).join('\n')}
+    const array = [Object.keys(arr[0])].concat(arr);
+
+    return array
+      .map((it) => {
+        return Object.values(it).toString();
+      })
+      .join("\n");
+  }
   const saveData = (function () {
     const a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
     return function (data, fileName) {
       const blob = new Blob([data], {
-          type: "octet/stream"
+          type: "octet/stream",
         }),
         url = window.URL.createObjectURL(blob);
       a.href = url;
@@ -594,11 +599,12 @@ function downloadCVS() {
       a.click();
       window.URL.revokeObjectURL(url);
     };
-  }());
-  let url = "/division_DAY";
+  })();
+  // let url = "/division_DAY";
+  let url = state;
   fetch(url)
     .then((res) => res.json())
-    .then((out) => { 
+    .then((out) => {
       saveData(convertToCSV(out), fileName);
     });
 }
