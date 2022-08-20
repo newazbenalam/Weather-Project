@@ -262,7 +262,7 @@ function line() {
 // bar();
 line();
 
-var selectedValue;
+var selectedValue = "DAY";
 function getSelectValue() {
   selectedValue = String(document.getElementById("list").value);
   let arr = [[], [], []];
@@ -436,7 +436,7 @@ function getSelectValue() {
 }
 
 function division(){
-  state = "division_DAY";
+  state = "division";
   let url = "/division_DAY";
   arr = [[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]],[[],[]]];
   fetch(url)
