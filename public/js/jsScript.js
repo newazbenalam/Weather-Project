@@ -572,3 +572,33 @@ function division(){
     };
   }
 
+function downloadCVS() {
+  const fileName = "report-DBMS.csv";
+  function convertToCSV(arr) {
+    const array = [Object.keys(arr[0])].concat(arr)
+  
+    return array.map(it => {
+      return Object.values(it).toString()
+    }).join('\n')}
+  const saveData = (function () {
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    return function (data, fileName) {
+      const blob = new Blob([data], {
+          type: "octet/stream"
+        }),
+        url = window.URL.createObjectURL(blob);
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    };
+  }());
+  let url = "/division_DAY";
+  fetch(url)
+    .then((res) => res.json())
+    .then((out) => { 
+      saveData(convertToCSV(out), fileName);
+    });
+}
