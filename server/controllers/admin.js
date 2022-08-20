@@ -6,13 +6,13 @@ exports.admin = async(req, res) => {
   exports.adminLoginClick = async(req, res) => {
     let admin = [
       {
-        name: "Admin",
-        email: "admin@yahoo.com",
+        name: "Admin 1",
+        email: "admin@gmail.com",
         pass: "1234"
       },
       {
-        name: "Newaz",
-        email: "newaz@gmail.com",
+        name: "Admin 2",
+        email: "admin@yahoo.com",
         pass: "1234"
       }
     ]
