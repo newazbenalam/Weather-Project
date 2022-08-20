@@ -468,7 +468,7 @@ function division(){
         }
         // arr[divIndex+1].push(out[i].PM25);
       }
-      console.log(arr);
+      // console.log(arr);
 
       var trace = [];
 
